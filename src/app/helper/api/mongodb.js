@@ -19,7 +19,7 @@ async function dbConnect() {
     }
 
     /* connecting to our database */
-    const db = await mongoose.connect("mongodb+srv://abby:iMedia%40009@cluster0.haey07t.mongodb.net/?retryWrites=true&w=majority")
+    const db = await mongoose.connect(process.env.NEXT_MONGODB_URL)
 
     connection.isConnected = db.connections[0].readyState
 }
